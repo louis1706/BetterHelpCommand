@@ -12,8 +12,6 @@
     [HarmonyPatch(typeof(HelpCommand), nameof(HelpCommand.GetCommandList))]
     internal class HelpCommandPatche
     {
-        private static readonly Regex ConsoleTagReplacer = new(@"<\/?[ib]>");
-
         private static bool Prefix(HelpCommand __instance, ICommandHandler handler, string header, ref string __result)
         {
             StringBuilder _helpBuilder = __instance._helpBuilder;
@@ -37,6 +35,7 @@
                 GetCommand(command);
             }
 
+            __result = _helpBuilder.ToString();
             return false;
 
             void GetCommand(ICommand command, int space = 0)
