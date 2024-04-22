@@ -1,4 +1,4 @@
-﻿# Better Help Command ![Downloads](https://img.shields.io/github/downloads/Misfiy/EffectKeeper/total)
+﻿# Better Help Command ![Downloads](https://img.shields.io/github/downloads/louis1706/BetterHelpCommand/total)
 * An EXILED plugin that improves the help command by making it more readable.
 
 # Installation
