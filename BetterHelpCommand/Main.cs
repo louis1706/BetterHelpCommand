@@ -1,4 +1,5 @@
-﻿using Exiled.API.Features;
+﻿using Exiled.API.Enums;
+using Exiled.API.Features;
 using HarmonyLib;
 using System;
 using static PlayerList;
@@ -10,7 +11,7 @@ namespace BetterHelpCommand
         public static Main Instance { get; set; }
         public static Harmony Harmony { get; set; }
         public override string Author { get; } = "yamato";
-
+        public override PluginPriority Priority => PluginPriority.Highest;
         public override void OnEnabled()
         {
             Instance = this;

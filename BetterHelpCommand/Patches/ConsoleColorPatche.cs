@@ -68,7 +68,7 @@
                     string tag = match.Groups[1].Value.ToLower();
                     string value = match.Groups[2].Value;
                     string content = match.Groups[3].Value;
-                    if (PluginAPI.Core.Log.DisableBetterColors || Testing is AnsiUsage.None)
+                    if (Testing is AnsiUsage.None)
                         return content;
                     return content = tag switch
                     {
@@ -82,7 +82,7 @@
                 });
             }
 
-            if (!PluginAPI.Core.Log.DisableBetterColors && Testing.HasFlag(AnsiUsage.StartWithAnsi))
+            if (Testing.HasFlag(AnsiUsage.StartWithAnsi))
                 text = $"\u001b[{defaultAnsiColor}m" + text;
             ServerStatic.ServerOutput?.AddLog(text, defaultColor);
             return false;
